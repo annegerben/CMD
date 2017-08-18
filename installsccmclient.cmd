@@ -23,7 +23,7 @@ title install SCCM client
 cls
 pushd "%~dp0"
 echo rename logfile
-rename %systemdrive%\Windows\CCMsetup\logs\ccmsetup.log %systemdrive%\Windows\CCMsetup\logs\beforeinstall_ccmsetup.log
+rename %systemdrive%\Windows\CCMsetup\logs\ccmsetup.log beforeinstall_ccmsetup.log
 echo start uninstall
 cmd /c powershell.exe -Command "Start-Process cmd '/k cd /d %cd% && %systemdrive%\Windows\ccmsetup\ccmsetup.exe SWITCHES HERE && exit' -Verb RunAs"
 echo open logfile
